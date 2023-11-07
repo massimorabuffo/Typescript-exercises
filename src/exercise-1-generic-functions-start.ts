@@ -6,7 +6,7 @@
 // This should fix the type errors on Line 13 and 15.
 // Hint: The type for the `value` function parameter should use a type variable.
 
-function identity(value) {
+function identity<T>(value: T): T {
     return value;
 }
 
@@ -30,7 +30,7 @@ interface User {
 // Pass the `User` type as a type argument to the generic `fetchData()` function.
 // This should fix the type error on Line 35.
 
-let user = await fetchData("http://api.com/user/1");
+let user = await fetchData<User>("http://api.com/user/1");
 
 console.log(user.name);
 
